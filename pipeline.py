@@ -199,6 +199,8 @@ class WgetArgs(object):
         if item_type == 'product':
             suffixesa = string.digits
             suffixesb = string.digits
+            for url in ['http://content.webcollage.net/rdshk/api/js/method/load-content/type/ppp?environment=live&cpi={0}{1}{2}'.format(item_value, a, b) for a in suffixesa for b in suffixesb]:
+                wget_args.append(url)
             for url in ['http://www.radioshack.com/{0}{1}{2}.html'.format(item_value, a, b) for a in suffixesa for b in suffixesb]:
                 wget_args.append(url)
         else:
